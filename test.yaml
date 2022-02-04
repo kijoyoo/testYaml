@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment  
+metadata:
+  name: mavel-home
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: marvel
+  template:
+    metadata:
+      labels:
+        name: marvel
+    spec:
+      containers:
+      - image: smlinux/marvel
+        name: marvel-container
+        ports:
+        - containerPort: 80
+
